@@ -9,12 +9,17 @@ namespace Conveyor_ChainResponsibility.Moduls
 {
     class Armature : Conveyor
     {
-        public override void Processing(Raw raw)
+        public int target = 2;
+
+        public override void Processing()
         {
-            if (raw.Armature == true)
+            if (target == Target)
                 Console.WriteLine("Warehouse: Armature");
             else if (Successor != null)
-                Successor.Processing(raw);
+            {
+                Console.WriteLine("Переход от Арматуры к Angle");
+                Successor.Processing();
+            }
         }
     }
 }

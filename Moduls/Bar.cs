@@ -9,12 +9,14 @@ namespace Conveyor_ChainResponsibility.Moduls
 {
     class Bar : Conveyor
     {
-        public override void Processing(Raw raw)
+        public int target = 3;
+
+        public override void Processing()
         {
-            if (raw.Bar == true)
+            if (target == Target)
                 Console.WriteLine("Warehouse: Bar");
             else if (Successor != null)
-                Successor.Processing(raw);
+                Successor.Processing();
         }
     }
 }

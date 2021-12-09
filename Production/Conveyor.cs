@@ -8,7 +8,9 @@ namespace Conveyor_ChainResponsibility.Production
 {
     abstract class Conveyor
     {
+        public static int Target;
+
         public Conveyor Successor { get; set; }
-        public abstract void Processing(Raw raw);
+        public abstract void Processing();
     }
 }

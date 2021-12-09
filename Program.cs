@@ -18,8 +18,8 @@ namespace Conveyor_ChainResponsibility
             Console.Write("Choose a product: ");
             int target = Convert.ToInt32(Console.ReadLine());
 
-            Raw raw = new Raw(target);
-
+            //Raw raw = new Raw(target);
+            
             Conveyor armature = new Armature();
             Conveyor bar = new Bar();
             Conveyor pipe = new Pipe();
@@ -30,7 +30,8 @@ namespace Conveyor_ChainResponsibility
             pipe.Successor = square;
             square.Successor = angle;
 
-            armature.Processing(raw);
+            Conveyor.Target = target;
+            armature.Processing();
         }
     }
 }

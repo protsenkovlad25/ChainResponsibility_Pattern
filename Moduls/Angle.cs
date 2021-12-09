@@ -9,12 +9,14 @@ namespace Conveyor_ChainResponsibility.Moduls
 {
     class Angle : Conveyor
     {
-        public override void Processing(Raw raw)
+        public int target = 1;
+
+        public override void Processing()
         {
-            if (raw.Angle == true)
+            if (target == Target)
                 Console.WriteLine("Warehouse: Angle");
             else if (Successor != null)
-                Successor.Processing(raw);
+                Successor.Processing();
         }
     }
 }

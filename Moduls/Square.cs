@@ -9,12 +9,14 @@ namespace Conveyor_ChainResponsibility.Moduls
 {
     class Square : Conveyor
     {
-        public override void Processing(Raw raw)
+        public int target = 5;
+
+        public override void Processing()
         {
-            if (raw.Square == true)
+            if (target == Target)
                 Console.WriteLine("Warehouse: Square");
             else if (Successor != null)
-                Successor.Processing(raw);
+                Successor.Processing();
         }
     }
 }
